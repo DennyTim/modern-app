@@ -14,45 +14,35 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "projects": {
-    "frontend-client": {
-      "tags": [
-        "scope:frontend-client",
-        "type:app"
-      ]
-    },
-    "frontend/client-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "frontend-client"
-      ]
+    "backend-api": {
+      "tags": ["type:app", "scope:backend-api"]
     },
     "frontend-admin": {
-      "tags": [
-        "scope:frontend-admin",
-        "type:app"
-      ]
+      "tags": ["scope:frontend-admin", "type:app"]
+    },
+    "frontend-client": {
+      "tags": ["scope:frontend-client", "type:app"]
     },
     "frontend/admin-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "frontend-admin"
-      ]
+      "implicitDependencies": ["frontend-admin"]
     },
-    "backend-api": {
-      "tags": [
-        "type:app",
-        "scope:backend-api"
-      ]
+    "frontend/client-e2e": {
+      "tags": [],
+      "implicitDependencies": ["frontend-client"]
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
