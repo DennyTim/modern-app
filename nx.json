@@ -35,6 +35,9 @@
     "frontend/client-e2e": {
       "tags": [],
       "implicitDependencies": ["frontend-client"]
+    },
+    "shared-data-access-interfaces": {
+      "tags": []
     }
   },
   "targetDependencies": {
