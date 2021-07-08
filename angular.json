@@ -39,6 +39,16 @@
       "sourceRoot": "apps\\backend\\api\\src",
       "projectType": "application",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cp README.md ./docs-temp && cp ./apps/backend/api/docs/README.md ./ && npx compodoc -p apps/backend/api/tsconfig.app.json --theme vagrant -r 8085 -d docs/api/ && rm README.md && cp ./docs-temp/README.md ./ && rm ./docs-temp/README.md"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@nrwl/node:build",
           "outputs": [
@@ -98,6 +108,16 @@
       "sourceRoot": "apps/frontend/admin/src",
       "prefix": "modern-app",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cp README.md ./docs-temp && cp ./apps/frontend/admin/docs/README.md ./ && npx compodoc -p apps/frontend/admin/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/admin/ && rm README.md && cp ./docs-temp/README.md ./ && rm ./docs-temp/README.md"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -197,6 +217,16 @@
       "sourceRoot": "apps/frontend/client/src",
       "prefix": "modern-app",
       "architect": {
+        "compodoc": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cp README.md ./docs-temp && cp ./apps/frontend/client/docs/README.md ./ && npx compodoc -p apps/frontend/client/tsconfig.compodoc.json --theme vagrant -r 8085 -d docs/client/ && rm README.md && cp ./docs-temp/README.md ./ && rm ./docs-temp/README.md"
+              }
+            ]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -358,7 +388,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/libs/shared/data-access/interfaces",
             "tsConfig": "libs/shared/data-access/interfaces/tsconfig.lib.json",
