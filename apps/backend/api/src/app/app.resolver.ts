@@ -6,18 +6,18 @@ export const resolverMap = {
     name: 'Date',
     description: 'Date custom scalar type',
     // Value from the client
-    serialize(value) {
+    serialize(value: Date) {
       return value.getTime();
     },
     // Value send to the client
-    parseValue(value) {
+    parseValue(value: string) {
       return new Date(value);
     },
     // ast value is always in string format
     // Invalid hard-coded value (not an integer)
     parseLiteral(ast) {
-      if (ast.kind === Kind.INT) {
-        return new Date(parseInt(ast.value, 10));
+      if (ast.kind === Kind.STRING) {
+        return new Date(ast.value);
       }
       return null;
     },
