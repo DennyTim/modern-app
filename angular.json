@@ -230,9 +230,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/frontend/client",
+            "outputPath": "dist/frontend-client/browser",
             "index": "apps/frontend/client/src/index.html",
-            "main": "apps/frontend/client/src/main.ts",
+            "main": "apps/frontend/client/src/main.browser.ts",
             "polyfills": "apps/frontend/client/src/polyfills.ts",
             "tsConfig": "apps/frontend/client/tsconfig.app.json",
             "assets": [
@@ -322,6 +322,68 @@
             "jestConfig": "apps/frontend/client/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/frontend-client/server",
+            "main": "apps/frontend/client/server.ts",
+            "tsConfig": "apps/frontend/client/tsconfig.server.json",
+            "optimization": false,
+            "sourceMap": true,
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "apps/frontend/client/src/styles"
+              ]
+            },
+            "extractLicenses": false
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "apps/frontend/client/src/environments/environment.ts",
+                  "with": "apps/frontend/client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "frontend-client:build:development",
+              "serverTarget": "frontend-client:server:development"
+            },
+            "production": {
+              "browserTarget": "frontend-client:build:production",
+              "serverTarget": "frontend-client:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "frontend-client:build:production"
+            },
+            "development": {
+              "browserTarget": "frontend-client:build:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     },
