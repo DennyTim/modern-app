@@ -1,10 +1,16 @@
-import {Component} from '@angular/core';
+import {Component} from '@angular/core'
 
+/**
+ * Placeholder comment
+ */
 @Component({
   selector: 'modern-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'frontend-admin';
+  /**
+   * Title
+   */
+  title = 'frontend-admin'
 }

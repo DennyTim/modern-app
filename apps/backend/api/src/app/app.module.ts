@@ -8,6 +8,9 @@ import {resolverMap} from "./app.resolver";
 import {UsersModule} from "./users/users.module";
 import {AuthModule} from './auth/auth.module';
 
+/**
+ * Root module backend-api app
+ */
 @Module({
   imports: [
     UsersModule,

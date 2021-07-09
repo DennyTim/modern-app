@@ -1,13 +1,21 @@
 import {Injectable, UnauthorizedException} from '@nestjs/common';
+import {JwtService} from "@nestjs/jwt";
 import {ISignAuthPayload, ISignAuthResponse} from "@modern-app/shared/data-access/interfaces";
+
 import {UserService} from "../../users/services/user.service";
 import {PasswordService} from "./password.service";
 import {UserEntity} from "../../users/entities/user.entity";
-import {JwtService} from "@nestjs/jwt";
 import {environment} from "../../../environments/environment";
 
 @Injectable()
 export class AuthService {
+  /**
+   * Inject into AuthService: JwtService, UserService, PasswordService
+   *
+   * @param jwtService Implements interaction with JWT
+   * @param userService Implements interaction with the user entity
+   * @param passwordService Implements interaction with bcrypt and compare password
+   */
   constructor(
     private readonly jwtService: JwtService,
     private readonly userService: UserService,
@@ -15,6 +23,12 @@ export class AuthService {
   ) {
   }
 
+  /**
+   * Validate users
+   *
+   * @param username
+   * @param pass
+   */
   async validateUser(username: string, pass: string): Promise<Omit<UserEntity, 'password'>> {
     const user = await this.userService.findOneByUserName(username);
     const isValid = user ? await this.passwordService.compareHash(pass, user.password) : false;
@@ -27,6 +41,11 @@ export class AuthService {
     return null;
   }
 
+  /**
+   * Return SignAuthResponse data
+   *
+   * @param signInPayload Incoming login data
+   */
   async login(signInPayload: ISignAuthPayload): Promise<ISignAuthResponse> {
     const user = await this.validateUser(signInPayload.username, signInPayload.password);
 

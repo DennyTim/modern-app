@@ -1,12 +1,16 @@
-import {Controller, Get} from '@nestjs/common';
+import {Controller, Get} from '@nestjs/common'
 
+
+/**
+ * Base controller backend-api app
+ */
 @Controller()
 export class AppController {
-  constructor() {
-  }
-
+  /**
+   * Return welcome string
+   */
   @Get()
   getData() {
-    return {message: 'Welcome to backend/api'};
+    return {message: 'Welcome to backend/api!'}
   }
 }
