@@ -27,7 +27,43 @@
 • [frontend-client](https://vladirr.github.io/svvs/client/)
 • [frontend-admin](https://vladirr.github.io/svvs/admin/)
 
+### 📌 How to start
+- Clone repo
 
+- Create .env according to list variables below:
+
+```yaml
+API_PORT=
+DB_TYPE=
+DB_NAME=
+DB_HOST=
+DB_HOST_NAME=
+DB_PORT=
+DB_USER_NAME=
+DB_USER_PASSWORD=
+PGADMIN_PORT=
+PGADMIN_DEFAULT_EMAIL=
+PGADMIN_DEFAULT_PASSWORD=
+
+JWT_SECRET=
+JWT_EXPIRES_IN=
+
+FRONTEND_CLIENT_PORT=
+TYPEORM_MIGRATIONS_DIR=
+```
+
+
+- run docker daemon (e.g. macOS you can use [Docker Desktop](https://docs.docker.com/docker-for-mac/release-notes/) )
+- if necessary
+  - change .env data
+```
+yarn install                   // install dependensies
+yarn run db:start              // create database
+yarn run db:entites            // apply entities
+yarn run db:migrations:run     // apply migration
+yarn run backend-api:start     // start backend server
+yarn run frontend-client:start // start frontend client 
+```
 
 This project was generated using [Nx](https://nx.dev).
 
