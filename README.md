@@ -1,3 +1,5 @@
+[![documentation](https://github.com/DennyTim/modern-app/actions/workflows/generate-docs.yml/badge.svg)](https://github.com/DennyTim/modern-app/actions/workflows/generate-docs.yml)
+
 # ModernApp
 
 ## The ModernApp project includes
