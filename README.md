@@ -1,5 +1,32 @@
 # ModernApp
 
+## The ModernApp project includes
+- backend-api server
+- PostgreSQL db
+- frontend client app
+- frontend admin app
+- a set of libraries
+
+### Technologies used
+
+[Nx](https://nx.dev)
+• [NestJs](https://nestjs.com)
+• [GraphQL](https://graphql.org/)
+• [Docker](https://www.docker.com/)
+• [PostgreSQL](https://www.postgresql.org/)
+• [Angular](https://angular.io)
+• [Bootstrap](https://v5.getbootstrap.com/)
+• [angular.material](https://material.angular.io/)
+
+
+### Documentation
+
+[backend-api](https://vladirr.github.io/svvs/api/)
+• [frontend-client](https://vladirr.github.io/svvs/client/)
+• [frontend-admin](https://vladirr.github.io/svvs/admin/)
+
+
+
 This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
