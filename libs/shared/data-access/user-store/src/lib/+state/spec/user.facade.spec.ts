@@ -5,12 +5,12 @@ import { StoreModule, Store } from '@ngrx/store';
 import { NxModule } from '@nrwl/angular';
 import { readFirst } from '@nrwl/angular/testing';
 
-import * as UserActions from './user.actions';
-import { UserEffects } from './user.effects';
-import { UserFacade } from './user.facade';
-import { UserEntity } from './user.models';
-import { USER_FEATURE_KEY, State, initialState, reducer } from './user.reducer';
-import * as UserSelectors from './user.selectors';
+import * as UserActions from '../user.actions';
+import { UserEffects } from '../user.effects';
+import { UserFacade } from '../user.facade';
+import { UserEntity } from '../user.models';
+import { USER_FEATURE_KEY, State, initialState, reducer } from '../user.reducer';
+import * as UserSelectors from '../user.selectors';
 
 interface TestSchema {
   user: State;

@@ -1,6 +1,6 @@
-import { UserEntity } from './user.models';
-import { userAdapter, UserPartialState, initialState } from './user.reducer';
-import * as UserSelectors from './user.selectors';
+import { UserEntity } from '../user.models';
+import { userAdapter, UserPartialState, initialState } from '../user.reducer';
+import * as UserSelectors from '../user.selectors';
 
 describe('User Selectors', () => {
   const ERROR_MSG = 'No Error Available';

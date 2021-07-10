@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
-import * as UserActions from './user.actions';
-import { UserEntity } from './user.models';
-import { State, initialState, reducer } from './user.reducer';
+import * as UserActions from '../user.actions';
+import { UserEntity } from '../user.models';
+import { State, initialState, reducer } from '../user.reducer';
 
 describe('User Reducer', () => {
   const createUserEntity = (id: string, name = ''): UserEntity => ({

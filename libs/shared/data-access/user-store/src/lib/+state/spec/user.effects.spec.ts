@@ -6,8 +6,8 @@ import { NxModule } from '@nrwl/angular';
 import { hot } from '@nrwl/angular/testing';
 import { Observable } from 'rxjs';
 
-import * as UserActions from './user.actions';
-import { UserEffects } from './user.effects';
+import * as UserActions from '../user.actions';
+import { UserEffects } from '../user.effects';
 
 describe('UserEffects', () => {
   let actions: Observable<Action>;
