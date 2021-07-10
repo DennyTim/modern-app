@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { RouterModule } from '@angular/router';
-import { RootStoreModule } from '@modern-app/shared/data-access/root-store';
-
-import { AppComponent } from './app.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'modern-app' }),
-    RootStoreModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    BrowserModule.withServerTransition({appId: 'modern-app'}),
+    HttpClientModule,
+    BrowserTransferStateModule,
+    TransferHttpCacheModule,
   ],
-  declarations: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
