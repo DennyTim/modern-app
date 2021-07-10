@@ -365,31 +365,6 @@
         }
       }
     },
-    "frontend-client-data-access-root-store": {
-      "projectType": "library",
-      "root": "libs/frontend-client/data-access/root-store",
-      "sourceRoot": "libs/frontend-client/data-access/root-store/src",
-      "prefix": "modern-app",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/frontend-client/data-access/root-store"],
-          "options": {
-            "jestConfig": "libs/frontend-client/data-access/root-store/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/frontend-client/data-access/root-store/src/**/*.ts",
-              "libs/frontend-client/data-access/root-store/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "frontend/admin-e2e": {
       "root": "apps/frontend/admin-e2e",
       "sourceRoot": "apps/frontend/admin-e2e/src",
@@ -470,6 +445,31 @@
           "options": {
             "jestConfig": "libs/shared/data-access/interfaces/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-data-access-root-store": {
+      "projectType": "library",
+      "root": "libs/shared/data-access/root-store",
+      "sourceRoot": "libs/shared/data-access/root-store/src",
+      "prefix": "modern-app",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/data-access/root-store"],
+          "options": {
+            "jestConfig": "libs/shared/data-access/root-store/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-access/root-store/src/**/*.ts",
+              "libs/shared/data-access/root-store/src/**/*.html"
+            ]
           }
         }
       }

@@ -1,5 +1,5 @@
 {
-  "extends": ["../../../../.eslintrc.json"],
+  "extends": "../../../../.eslintrc.json",
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -24,7 +24,8 @@
             "prefix": "modern-app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/no-non-null-assertion": "off"
       }
     },
     {

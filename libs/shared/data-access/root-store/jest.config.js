@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'frontend-client-data-access-root-store',
+  displayName: 'shared-data-access-root-store',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,8 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory:
-    '../../../../coverage/libs/frontend-client/data-access/root-store',
+  coverageDirectory: '../../../../coverage/libs/shared/data-access/root-store',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

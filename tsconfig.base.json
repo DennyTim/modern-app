@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@modern-app/frontend-client/data-access/root-store": [
-        "libs/frontend-client/data-access/root-store/src/index.ts"
-      ],
       "@modern-app/shared/data-access/interfaces": [
         "libs/shared/data-access/interfaces/src/index.ts"
+      ],
+      "@modern-app/shared/data-access/root-store": [
+        "libs/shared/data-access/root-store/src/index.ts"
       ]
     }
   },
