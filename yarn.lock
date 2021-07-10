@@ -2236,10 +2236,24 @@
   dependencies:
     tslib "^2.1.0"
 
+"@ngrx/component-store@^12.0.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-12.2.0.tgz#84f5c06b22d7ea498e9a9dbf45f5b9c8b620943a"
+  integrity sha512-RTCe1kOctJGUOBmIZAeYkoK/2g01AZK2GubpL1GixS/NbvvoFSFDya031HuwwVFtXBfwPZxWVL0QHyG29egf/w==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/effects@^12.2.0":
   version "12.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-12.2.0.tgz#833f16339d8397905df5a30cf491b1afaa957b7b"
   integrity sha512-TyXsUnUWiK7k9qq+Upw7NsvnOtxw1txvAjYhVI3PHLuiDyCtvcrpWHliKC/vsAiINJSytaUdVJu+wCQe3J/z4A==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/entity@^12.0.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-12.2.0.tgz#304ba81e594096150e67c1bcf449927f3110d414"
+  integrity sha512-/J/TRF8I3veWpzKGaTGj7bWzvrL96ATK5Ye7GcIUU/4p8j7uHfdUgn8N5yfWp1Sch+lConh/YPc30bcAPAXqaA==
   dependencies:
     tslib "^2.0.0"
 

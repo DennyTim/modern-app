@@ -20,6 +20,9 @@
       ],
       "@modern-app/shared/data-access/root-store": [
         "libs/shared/data-access/root-store/src/index.ts"
+      ],
+      "@modern-app/shared/data-access/user-store": [
+        "libs/shared/data-access/user-store/src/index.ts"
       ]
     }
   },

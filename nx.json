@@ -41,6 +41,9 @@
     },
     "shared-data-access-root-store": {
       "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
+    },
+    "shared-data-access-user-store": {
+      "tags": ["type:lib", "scope:shared", "lib-type:data-access"]
     }
   },
   "targetDependencies": {
