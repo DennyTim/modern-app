@@ -17,6 +17,9 @@
     "paths": {
       "@modern-app/shared/data-access/interfaces": [
         "libs/shared/data-access/interfaces/src/index.ts"
+      ],
+      "@modern-app/shared/data-access/root-store": [
+        "libs/shared/data-access/root-store/src/index.ts"
       ]
     }
   },
