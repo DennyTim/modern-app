@@ -1,16 +1,13 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {StoreModule} from '@ngrx/store';
-import {EffectsModule} from '@ngrx/effects';
+import {ModuleWithProviders, NgModule, Provider} from '@angular/core';
+import {CommonModule} from '@angular/common'
+import {StoreModule} from '@ngrx/store'
+import {EffectsModule} from '@ngrx/effects'
 import {ApolloServer} from "apollo-server-express";
-import {UserEffects} from './+state/user.effects';
 
-import * as fromUser from './+state/user.reducer';
-
-//TODO delete stub after implementing
-export interface IUserStoreOptions {
-  apollo: string
-}
+import * as fromUser from './+state/user.reducer'
+import {UserEffects} from './+state/user.effects'
+import {IUserStoreOptions} from './interfaces/user-store-options.interface'
+import {IUserApollo} from './interfaces/user-apollo.interface'
 
 @NgModule({
   imports: [
@@ -26,7 +23,16 @@ export class UserStoreModule {
   static forRoot(options: Partial<IUserStoreOptions>): ModuleWithProviders<UserStoreModule> {
     return {
       ngModule: UserStoreModule,
-      providers: []
+      providers: [
+        {
+          provide: IUserApollo,
+          useClass: options.apollo,
+        } as Provider,
+        {
+          provide: IUserApollo,
+          useClass: options.facade,
+        } as Provider,
+      ]
     }
   }
 }
