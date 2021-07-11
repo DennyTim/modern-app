@@ -9,8 +9,13 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "module": "ES2020",
+    "typeRoots": ["node_modules/@types"],
+    "lib": [
+      "ESNext",
+      "dom",
+      "ESNext.AsyncIterable"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -20,6 +25,9 @@
       ],
       "@modern-app/shared/data-access/root-store": [
         "libs/shared/data-access/root-store/src/index.ts"
+      ],
+      "@modern-app/shared/data-access/user-store": [
+        "libs/shared/data-access/user-store/src/index.ts"
       ]
     }
   },
