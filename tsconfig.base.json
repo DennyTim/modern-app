@@ -11,24 +11,21 @@
     "target": "es2015",
     "module": "ES2020",
     "typeRoots": ["node_modules/@types"],
-    "lib": [
-      "ESNext",
-      "dom",
-      "ESNext.AsyncIterable"
-    ],
+    "lib": ["ESNext", "dom", "ESNext.AsyncIterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@modern-app/shared/data-access/interfaces": [
-        "libs/shared/data-access/interfaces/src/index.ts"
-      ],
       "@modern-app/shared/data-access/root-store": [
         "libs/shared/data-access/root-store/src/index.ts"
       ],
       "@modern-app/shared/data-access/user-store": [
         "libs/shared/data-access/user-store/src/index.ts"
-      ]
+      ],
+      "@modern-app/shared/utils/interfaces": [
+        "libs/shared/utils/interfaces/src/index.ts"
+      ],
+      "@modern-app/shared/utils/store": ["libs/shared/utils/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
