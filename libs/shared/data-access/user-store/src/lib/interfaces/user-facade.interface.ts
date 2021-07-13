@@ -1,5 +1,6 @@
 import {Observable} from 'rxjs'
-import {IUser} from "@modern-app/shared/data-access/interfaces";
+import {IUser} from "@modern-app/shared/utils/interfaces";
+import {ApolloError} from '@apollo/client'
 
 /**
  * User facade
@@ -7,7 +8,23 @@ import {IUser} from "@modern-app/shared/data-access/interfaces";
 export abstract class IUserFacade {
 
   /**
-   * User observer
+   * User entity observer
    */
-  user$: Observable<IUser> | undefined;
+  user$: Observable<IUser | null> | undefined;
+
+  /**
+   * User load status observer
+   */
+  userLoadRun$: Observable<boolean | null> | undefined;
+
+  /**
+   * User load error observer
+   */
+  userLoadFailure$: Observable<ApolloError | null> | undefined;
+
+  /**
+   * Load user action(dispatch)
+   * @param force Force
+   */
+  abstract loadUser(force?: boolean): void
 }
