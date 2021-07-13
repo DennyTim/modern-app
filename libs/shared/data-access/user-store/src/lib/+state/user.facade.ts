@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from '@angular/core'
 
-import {select, Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store'
 
-import * as UserActions from './user.actions';
-import * as UserSelectors from './user.selectors';
-import {IUserFacade} from '../interfaces/user-facade.interface';
-import {IUserStoreFeatureKey} from '../interfaces/user-store-feature-key.interface';
+import * as UserActions from './user.actions'
+import * as UserSelectors from './user.selectors'
+import {IUserFacade} from '../interfaces/user-facade.interface'
+import {IUserStoreFeatureKey} from '../interfaces/user-store-feature-key.interface'
 
 /**
  * User store Facade
@@ -16,17 +16,17 @@ export class UserFacade implements IUserFacade {
   /**
    * get user entity
    */
-  user$ = this.store.pipe(select(UserSelectors.getUser));
+  user$ = this.store.pipe(select(UserSelectors.getUser))
 
   /**
    * get user load error
    */
-  userLoadFailure$ = this.store.pipe(select(UserSelectors.getUserLoadFailure));
+  userLoadFailure$ = this.store.pipe(select(UserSelectors.getUserLoadFailure))
 
   /**
    * get user load status
    */
-  userLoadRun$ = this.store.pipe(select(UserSelectors.getUserLoadRun));
+  userLoadRun$ = this.store.pipe(select(UserSelectors.getUserLoadRun))
 
   constructor(private store: Store<IUserStoreFeatureKey>) {
   }
@@ -38,7 +38,7 @@ export class UserFacade implements IUserFacade {
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   loadUser(force?: boolean): void {
-    this.store.dispatch(UserActions.loadUser({payload: {force: true}}));
+    this.store.dispatch(UserActions.loadUser({payload: {force: true}}))
   }
 
 }
